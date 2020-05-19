@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>admin</title>
+	<link rel="shortcut icon" href="https://www.hexschool.com/favicon.ico">
+
+	<!-- <title>Week5 後台首頁</title> -->
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style/all.css">
+</head>
+
+<body>
+  <!-- layout start -->
+  <div class="wrap d-flex">
+    <!-- 左側導覽列 -->
+    <div class="sidebar bg-primary d-flex flex-column justify-content-between py-7">
+      <div class="sidebar-top">
+        <!-- logo -->
+        <h1 class="mb-7 pl-7">
+          <a href="#" class="logo">
+            <img src="assets/images/logo-ANSWER.svg" alt="">
+          </a>
+        </h1>
+        <!-- 左側選單 -->
+        <ul class="nav flex-column admin">
+          <li class="nav-item mb-4 w-100">
+            <a class="nav-item-a pl-7 py-1 d-flex align-items-center text-decoration-none" href="#">
+              <i class="material-icons mr-3">insert_chart</i>
+              <span class="font-weight-bold">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item mb-4 w-100">
+            <a class="nav-item-a pl-7 py-1 d-flex align-items-center text-decoration-none" href="#">
+              <i class="material-icons mr-3">question_answer</i>
+              <span class="font-weight-bold">Question</span>
+            </a>
+          </li>
+          <li class="assignment-li nav-item mb-4 w-100 border-left border-secondary">
+            <a class="assignment-a nav-item-a pl-7 py-1 d-flex align-items-center text-decoration-none" href="index.html">
+              <i class="material-icons mr-3">assignment</i>
+              <span class="font-weight-bold">Assignment</span>
+            </a>
+          </li>
+          <li class="nav-item mb-4 w-100">
+            <a class="nav-item-a pl-7 py-1 d-flex align-items-center text-decoration-none" href="#">
+              <i class="material-icons mr-3">video_library</i>
+              <span class="font-weight-bold">Course</span>
+            </a>
+          </li>
+          <li class="admin-li nav-item mb-4 w-100">
+            <a class="admin-a nav-item-a pl-7 py-1 d-flex align-items-center text-decoration-none" href="admin.html">
+              <i class="material-icons mr-3">people</i>
+              <span class="font-weight-bold">Admin</span>
+            </a>
+          </li>
+          <li class="nav-item mb-4 w-100">
+            <a class="nav-item-a pl-7 py-1  d-flex align-items-center text-decoration-none" href="#">
+              <i class="material-icons mr-3">settings</i>
+              <span class="font-weight-bold">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-btm">
+        <!-- 使用著資訊 -->
+        <div class="media pl-7">
+          <div class="person-img boy-img rounded-circle mr-3"></div>
+          <div class="media-body">
+            <h5 class="font-weight-bold text-info d-flex flex-column mt-0 mb-1">Andy Chen (You)
+              <span class="font-m text-dark $font-weight-normal">andy0401@mail.com</span>
+            </h5>
+          </div>
+        </div>
+      </div>      
+    </div>
+    <!-- 右側內容區塊 -->
+    <div class="right-content w-100 p-7">
+  <!-- layout end --> 
+      <!-- <div class="topbar d-flex justify-content-between align-items-center mb-3">
+        <div class="page-info d-flex">
+          <h2 class="page-title font-weight-bold mr-7">Assignment</h2>
+          <div class="dropdown">
+            <button class="page-info-dropdown btn font-weight-bold d-flex align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All Courses
+              <i class="material-icons ml-2 text-secondary">keyboard_arrow_down</i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">HTML And CSS</a>
+              <a class="dropdown-item" href="#">RWD</a>
+              <a class="dropdown-item" href="#">Bootstrap4</a>
+            </div>
+          </div>
+        </div>
+        <div class="tool-icons">
+          <i class="material-icons mr-4">search</i>
+          <i class="material-icons">notifications_active</i>
+        </div>
+      </div> -->
+  
+<!-- 右側上方頁面標題 -->
+<div class="topbar d-flex justify-content-between align-items-center mb-3">
+  <div class="page-info d-flex">
+    <h2 class="page-title font-weight-bold mr-6">Admin</h2>
+    <button class="page-info-dropdown btn border-0 font-weight-bold d-flex align-items-center" type="button"  data-toggle="modal" data-target="#exampleModalLong">
+      <i class="material-icons mr-2 text-secondary">add</i>
+      Add New Admin 
+    </button>
+    <!-- add admin modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title font-weight-bold" id="exampleModalLongTitle">New Admin</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="material-icons" data-dismiss="modal" aria-label="Close">close</i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3 class="modal-body-title mb-3 font-weight-bold">Account</h3>
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput font-m">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2 font-m">Email</label>
+                <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="example@mail.com">
+              </div>
+            </form>
+            <hr>
+            <h3 class="modal-body-title mb-3 font-weight-bold">Verification</h3>
+            <p class="unverified font-weight-bold d-flex align-items-center mb-3">
+              <span class="material-icons mr-2 text-warning">warning</span>
+              Unverified
+            </p>
+            <button type="button" class="btn btn-outline-primary text-secondary font-weight-bold w-100">Send Verification Mail</button>
+            <hr>
+            <h3 class="modal-body-title mb-3 font-weight-bold">Access Level</h3>
+            <select name="" id="" class="form-control">
+              <option>-Choose access level-</option>
+            </select>
+            <hr>
+            <h3 class="modal-body-title mb-3 font-weight-bold">Custom Access</h3>
+            <ul class="form-check">
+              <li class="mb-3">
+                <input type="checkbox" class="custom-control-input" id="lecture">
+                <label class="custom-control-label" for="lecture">Lecture</label>
+              </li>
+              <li class="mb-3">
+                <input type="checkbox" class="custom-control-input" id="coupon">
+                <label class="custom-control-label" for="coupon">Coupon</label>
+              </li>
+              <li class="mb-3">
+                <input type="checkbox" class="custom-control-input" id="message">
+                <label class="custom-control-label" for="message">Message</label>
+              </li>
+              <li class="mb-3">
+                <input type="checkbox" class="custom-control-input" id="setting">
+                <label class="custom-control-label" for="setting">Setting</label>
+              </li>
+              <li class="mb-3">
+                <input type="checkbox" class="custom-control-input" id="task menu">
+                <label class="custom-control-label" for="task menu">Task menu</label>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary font-weight-bold" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary font-weight-bold">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tool-icons">
+    <i class="material-icons mr-4">search</i>
+    <i class="material-icons">notifications_active</i>
+  </div>
+</div>
+
+
+<!-- 表格 -->
+<table class="table table-hover mb-6 w-100">
+  <thead class="">
+    <tr>
+      <th scope="col" class="d-flex align-items-center">ID
+        <i class="material-icons text-secondary ml-2">arrow_downward</i>
+      </th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Verified</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">#1</th>
+      <td>Emir Wicks</td>
+      <td>emir.wicks@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons" data-toggle="modal" data-target="#exampleModalCenter">remove_red_eye</i>
+        <i class="material-icons" data-toggle="modal" data-target="#exampleModalEdit">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#2</th>
+      <td>Zaina Goldsmith</td>
+      <td>zaina.goldsmith@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between align-items-center">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#3</th>
+      <td>Mahima Lopez</td>
+      <td>Mahima.Lopez@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#4</th>
+      <td>Pharrell Murray</td>
+      <td>Pharrell Murray@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#5</th>
+      <td>Annika Mcbride</td>
+      <td>Annika.Mcbride@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#6</th>
+      <td>Fatimah Clark</td>
+      <td>Fatimah.Clark@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#7</th>
+      <td>Klaudia Rhodes</td>
+      <td>Klaudia.Rhodes@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between align-items-center">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#8</th>
+      <td>Tillie Lucero</td>
+      <td>Tillie.Lucero@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#9</th>
+      <td>Sabrina Stephenson</td>
+      <td>Sabrina.Stephenson@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">#10</th>
+      <td>Annie Smith</td>
+      <td>Annie.Smith@mail.com</td>
+      <td>Yes</td>
+      <td class="d-flex justify-content-between">
+        <i class="material-icons">remove_red_eye</i>
+        <i class="material-icons">create</i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="page-switch d-flex justify-content-end">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <i class="material-icons text-secondary font-weight-bold">keyboard_arrow_left</i>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link text-white font-weight-bold bg-secondary" href="#">1</a></li>
+      <li class="page-item"><a class="page-link text-secondary font-weight-bold " href="#">2</a></li>
+      <li class="page-item"><a class="page-link text-secondary font-weight-bold" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <i class="material-icons text-secondary font-weight-bold">keyboard_arrow_right</i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- emily 彈跳Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body d-flex">
+        <div class="emir-img mr-4"></div>
+        <div class="emir-info">
+          <p class="d-flex justify-content-between">#1
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="material-icons" data-dismiss="modal" aria-label="Close">close</i>
+            </button>
+          </p>
+          <span>Admin</span>
+          <h3 class="font-weight-bold mb-2">Emir Wicks</h3>
+          <p class="text-dark mb-2">emir.wicks@mail.com</p>
+          <a class="dropdown-btn btn d-flex justify-content-between " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <p class="font-m bg-primary py-1 px-2">Verified</p>
+            <i class="material-icons dropdown text-secondary">expand_more</i>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body border-0">
+              <div class="verified-edit-btns d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-warning font-weight-bold px-4 py-2">Deactivate</button>
+                <button type="button" class="btn btn-secondary font-weight-bold px-4 py-2">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- edit admin modal -->
+<div class="modal fade edit-admin" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalEditTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title font-weight-bold" id="exampleModalEditTitle">Edit Admin</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons" data-dismiss="modal" aria-label="Close">close</i>
+        </button>
+      </div>
+      <div class="modal-body mb-5">
+        <h3 class="modal-body-title mb-3 font-weight-bold">Account</h3>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput font-m">Name</label>
+            <input type="text" class="form-control bg-primary" id="formGroupExampleInput" placeholder="Emir Wicks">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2 font-m">Email</label>
+            <input type="email" class="form-control bg-primary" id="formGroupExampleInput2" placeholder="emir.wicks@mail.com">
+          </div>
+        </form>
+        <hr>
+        <h3 class="modal-body-title mb-3 font-weight-bold">Verification</h3>
+        <div class="verification-info d-flex justify-content-between">
+          <p class="unverified font-weight-bold d-flex align-items-center mb-3">
+            <span class="material-icons mr-2 text-secondary">check_circle</span>
+              Verified
+          </p>
+          <span class="font-m text-info">2020/0412</span>
+        </div>
+        <button type="button" class="btn btn-outline-primary text-primary font-weight-bold w-100">Send Verification Mail</button>
+        <hr>
+        <h3 class="modal-body-title mb-3 font-weight-bold">Access Level</h3>
+        <select name="" id="" class="form-control">
+          <option>Admin</option>
+        </select>
+        <hr>
+        <h3 class="modal-body-title mb-3 font-weight-bold">Custom Access</h3>
+        <ul class="form-check">
+          <li class="mb-3">
+            <input type="checkbox" class="custom-control-input" id="lecture">
+            <label class="custom-control-label" for="lecture">Lecture</label>
+          </li>
+          <li class="mb-3">
+            <input type="checkbox" class="custom-control-input" id="coupon">
+            <label class="custom-control-label" for="coupon">Coupon</label>
+          </li>
+          <li class="mb-3">
+            <input type="checkbox" class="custom-control-input" id="message">
+            <label class="custom-control-label" for="message">Message</label>
+          </li>
+          <li class="mb-3">
+            <input type="checkbox" class="custom-control-input" id="setting">
+            <label class="custom-control-label" for="setting">Setting</label>
+          </li>
+          <li class="mb-3">
+            <input type="checkbox" class="custom-control-input" id="task menu">
+            <label class="custom-control-label" for="task menu">Task menu</label>
+          </li>
+        </ul>
+        <hr>
+        <h3 class="modal-body-title mb-3 font-weight-bold">Custom Access</h3>
+        <p class="unverified font-weight-bold d-flex align-items-center mb-3 py-3">
+          <span class="material-icons mr-2 text-warning">warning</span>
+          This cannot be undone!
+        </p>
+        <button type="button" class="btn btn-outline-warning text-warning font-weight-bold w-100">Deactivate This Account</button>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary font-weight-bold" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary font-weight-bold">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+
+  <!-- BS4 JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="assets/js/all.js"></script>
+</body>
+
+</html>
